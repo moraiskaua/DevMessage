@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import ToasterContext from './contexts/ToasterContext';
+import AuthContext from './contexts/AuthContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,8 +20,10 @@ export default function RootLayout({
     <html lang="pt-BR">
       <link rel="shortcut icon" href="/images/logo.png" />
       <body className={inter.className}>
-        <ToasterContext />
-        {children}
+        <AuthContext>
+          <ToasterContext />
+          {children}
+        </AuthContext>
       </body>
     </html>
   );
