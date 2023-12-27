@@ -14,20 +14,20 @@ const useRoutes = () => {
       {
         label: 'Chat',
         href: '/conversations',
-        icons: HiChat,
+        icon: HiChat,
         active: pathname === '/conversations' || !!conversationId,
       },
       {
         label: 'Users',
         href: '/users',
-        icons: HiUsers,
+        icon: HiUsers,
         active: pathname === '/users',
       },
       {
         label: 'Logout',
         href: '#',
         onClick: () => signOut(),
-        icons: HiArrowLeftOnRectangle,
+        icon: HiArrowLeftOnRectangle,
       },
     ],
     [pathname, conversationId],
