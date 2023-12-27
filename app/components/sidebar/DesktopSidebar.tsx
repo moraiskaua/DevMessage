@@ -1,11 +1,10 @@
 'use client';
+
 import useRoutes from '@/app/hooks/useRoutes';
 import { useState } from 'react';
 import DesktopItem from './DesktopItem';
 
-interface DesktopSidebarProps {}
-
-const DesktopSidebar = ({}: DesktopSidebarProps) => {
+const DesktopSidebar = () => {
   const routes = useRoutes();
   const [isOpen, setIsOpen] = useState(false);
 
