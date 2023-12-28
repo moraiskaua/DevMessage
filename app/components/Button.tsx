@@ -7,7 +7,7 @@ type ButtonType = 'button' | 'submit' | 'reset' | undefined;
 
 interface ButtonProps {
   type?: ButtonType;
-  fullWidth: boolean;
+  fullWidth?: boolean;
   children?: ReactNode;
   secondary?: boolean;
   danger?: boolean;
