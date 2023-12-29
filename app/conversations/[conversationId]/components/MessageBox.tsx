@@ -21,7 +21,7 @@ const MessageBox = ({ data, isLast }: MessageBoxProps) => {
   const isOwn = session?.data?.user?.email === data?.sender?.email;
   const seenList = (data.seen || [])
     .filter(user => user.email !== data?.sender?.email)
-    .map(user => user.email)
+    .map(user => user.name)
     .join(', ');
 
   const container = clsx(`flex gap-3 p-4`, isOwn && 'justify-end');
