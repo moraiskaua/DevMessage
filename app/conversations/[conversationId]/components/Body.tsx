@@ -20,7 +20,7 @@ const Body = ({ initialMessages }: BodyProps) => {
 
   useEffect(() => {
     axios.post(`/api/conversations/${conversationId}/seen`);
-  }, []);
+  }, [conversationId]);
 
   useEffect(() => {
     pusherClient.subscribe(conversationId);
@@ -36,6 +36,8 @@ const Body = ({ initialMessages }: BodyProps) => {
 
         return [...current, message];
       });
+
+      bottomRef?.current?.scrollIntoView();
     };
 
     const updateMessageHandler = (newMessage: FullMessageType) => {
@@ -69,7 +71,7 @@ const Body = ({ initialMessages }: BodyProps) => {
           data={message}
         />
       ))}
-      <div ref={bottomRef} className="pt-24" />
+      <div className="pt-24" ref={bottomRef} />
     </div>
   );
 };
