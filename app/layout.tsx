@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
-      <link rel="shortcut icon" href="/images/logo.png" />
+    <html lang="en">
+      <link rel="icon" href="/images/logo.png" />
       <body className={inter.className}>
         <AuthContext>
           <ToasterContext />
