@@ -8,7 +8,10 @@ interface IParams {
   conversationId?: string;
 }
 
-export async function DELETE({ params }: { params: IParams }) {
+export async function DELETE(
+  request: Request,
+  { params }: { params: IParams },
+) {
   try {
     const { conversationId } = params;
     const currentUser = await getCurrentUser();
